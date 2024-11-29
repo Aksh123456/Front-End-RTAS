@@ -1,0 +1,78 @@
+/* src/components/Auction.css */
+
+.auction-container {
+    padding: 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .auction-item {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .auction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auction-item p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  button + button {
+    margin-left: 10px;
+  }
+  
+  .auction-item p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .auction-item .buy-now-text {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .auction-item .time-remaining {
+    font-size: 14px;
+    color: #f44336;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .auction-item .auction-ended {
+    font-size: 14px;
+    color: #9e9e9e;
+    margin-top: 5px;
+  }
+  
