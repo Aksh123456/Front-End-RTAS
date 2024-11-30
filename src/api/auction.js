@@ -7,7 +7,26 @@ const SOCKET_URL = process.env.REACT_APP_SOCKET_URL;
 
 const API_URL = process.env.REACT_APP_API_URL; 
 
-const socket = io(SOCKET_URL);
+// const socket = io(SOCKET_URL);
+
+
+
+// Use the deployed backend URL for Socket.IO connection
+
+
+const socket = io(SOCKET_URL, {
+  transports: ['websocket', 'polling'],
+  withCredentials: true, // If you are using cookies for authentication
+});
+
+socket.on('connect', () => {
+  console.log('Socket connected');
+});
+
+// Example to listen to events
+socket.on('someEvent', (data) => {
+  console.log('Data received:', data);
+});
 
 // Place a bid
 export const placeBid = (bidAmount, token) => {
