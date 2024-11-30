@@ -1,6 +1,7 @@
 import axios from "axios";
+// require('dotenv').config()
 
-const API_URL = "http://localhost:3000"; // Replace with your backend URL if different
+const API_URL = process.env.REACT_APP_API_URL; 
 
 // Register a new user
 export const registerUser = async (username, email, password) => {
@@ -19,6 +20,7 @@ export const registerUser = async (username, email, password) => {
 export const loginUser = async (email, password) => {
   try {
     console.log('HI')
+    console.log(API_URL, 'url')
     const response = await axios.post(`${API_URL}/auth/login`, { email, password });
     console.log(response, 'response')
     return response.data; // Returns token and other details

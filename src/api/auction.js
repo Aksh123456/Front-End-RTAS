@@ -1,9 +1,12 @@
 import { io } from "socket.io-client";
 import axios from "axios";
 import { getToken } from "./token";
+// require('dotenv').config()
 
+const SOCKET_URL = process.env.REACT_APP_SOCKET_URL; 
 
-const SOCKET_URL = "http://localhost:3000"; // Replace with your backend URL if different
+const API_URL = process.env.REACT_APP_API_URL; 
+
 const socket = io(SOCKET_URL);
 
 // Place a bid
@@ -35,7 +38,7 @@ export const fetchAuctions = async () => {
       throw new Error("You need to login to view the auction.");
     }
 
-    const response = await axios.get("http://localhost:3000/auction", {
+    const response = await axios.get(`${API_URL}/auction`, {
       headers: {
         Authorization: `Bearer ${token}`, // Pass token in Authorization header
       },
